@@ -391,16 +391,16 @@ const workflowQuestions: Question[] = [
   {
     id: 'workflow-8',
     category: 'workflow',
-    difficulty: 'hard',
-    question_text: '마이크로서비스 아키텍처에서 워크플로우 오케스트레이션의 역할은?',
+    difficulty: 'medium',
+    question_text: 'AI를 활용한 회의록 자동 작성의 올바른 활용 방법은?',
     options: [
-      { id: 'A', text: '모든 서비스를 하나로 통합한다' },
-      { id: 'B', text: '여러 서비스 간의 작업 순서와 흐름을 조율한다' },
-      { id: 'C', text: '데이터베이스만 관리한다' },
-      { id: 'D', text: 'UI 디자인을 담당한다' }
+      { id: 'A', text: 'AI가 작성한 회의록을 검토 없이 바로 공유한다' },
+      { id: 'B', text: '녹음 내용을 AI로 정리한 후 참석자 확인을 거친다' },
+      { id: 'C', text: '기밀 회의 내용도 외부 AI 서비스에 업로드한다' },
+      { id: 'D', text: '회의 참석 없이 AI가 추측으로 작성하게 한다' }
     ],
     correct_answer: 'B',
-    explanation: '오케스트레이션은 분산된 서비스들의 작업 순서, 실행, 오류 처리 등을 중앙에서 조율합니다.'
+    explanation: 'AI 회의록은 편리하지만, 정확성 확인과 기밀 정보 보호가 필수입니다.'
   },
   {
     id: 'workflow-9',
@@ -419,16 +419,16 @@ const workflowQuestions: Question[] = [
   {
     id: 'workflow-10',
     category: 'workflow',
-    difficulty: 'hard',
-    question_text: 'CI/CD 파이프라인에서 AI를 활용할 수 있는 영역은?',
+    difficulty: 'medium',
+    question_text: '반복 업무 자동화 대상을 선정할 때 우선순위가 높은 업무는?',
     options: [
-      { id: 'A', text: '코드 리뷰 자동화 및 버그 예측' },
-      { id: 'B', text: '서버 하드웨어 조립' },
-      { id: 'C', text: '사무실 조명 제어' },
-      { id: 'D', text: '직원 출퇴근 관리' }
+      { id: 'A', text: '한 달에 한 번 발생하는 창의적 기획 업무' },
+      { id: 'B', text: '매일 반복되고 규칙이 명확한 데이터 입력 업무' },
+      { id: 'C', text: '고객 감정에 따라 대응이 달라지는 민원 처리' },
+      { id: 'D', text: '매번 새로운 판단이 필요한 전략 수립' }
     ],
-    correct_answer: 'A',
-    explanation: 'AI는 CI/CD에서 코드 리뷰 자동화, 테스트 최적화, 배포 위험 예측 등에 활용됩니다.'
+    correct_answer: 'B',
+    explanation: '자동화는 반복 빈도가 높고, 규칙이 명확하며, 예외가 적은 업무부터 적용하는 것이 효과적입니다.'
   }
 ];
 
