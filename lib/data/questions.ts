@@ -104,15 +104,15 @@ const promptQuestions: Question[] = [
     id: 'prompt-8',
     category: 'prompt',
     difficulty: 'easy',
-    question_text: '프롬프트에 "~처럼 행동해" 라고 지시하는 기법의 이름은?',
+    question_text: 'Zero-shot Prompting과 Few-shot Prompting의 차이점은?',
     options: [
-      { id: 'A', text: 'Zero-shot Prompting' },
-      { id: 'B', text: 'Role Prompting (역할 부여)' },
-      { id: 'C', text: 'Few-shot Prompting' },
-      { id: 'D', text: 'Negative Prompting' }
+      { id: 'A', text: 'Zero-shot은 예시 없이, Few-shot은 예시를 포함하여 요청한다' },
+      { id: 'B', text: 'Zero-shot이 더 많은 예시를 사용한다' },
+      { id: 'C', text: '두 방식은 동일하다' },
+      { id: 'D', text: 'Few-shot은 AI를 학습시키는 방법이다' }
     ],
-    correct_answer: 'B',
-    explanation: 'Role Prompting은 AI에게 특정 역할을 부여하여 해당 관점에서 응답하도록 하는 기법입니다.'
+    correct_answer: 'A',
+    explanation: 'Zero-shot은 예시 없이 직접 질문하고, Few-shot은 원하는 형식의 예시를 몇 개 제공하여 AI가 패턴을 파악하게 합니다.'
   },
   {
     id: 'prompt-9',
@@ -182,8 +182,8 @@ const dataQuestions: Question[] = [
     options: [
       { id: 'A', text: '데이터의 시간 단위와 정상 범위' },
       { id: 'B', text: '데이터 수집 장비의 제조사' },
-      { id: 'C', text: '데이터를 수집한 담당자 이름' },
-      { id: 'D', text: '회사 로고 이미지' }
+      { id: 'C', text: '데이터베이스 서버 위치' },
+      { id: 'D', text: '데이터 파일의 확장자' }
     ],
     correct_answer: 'A',
     explanation: '이상치 탐지에는 시간 단위와 정상으로 간주되는 범위 정보가 필수적입니다.'
@@ -196,8 +196,8 @@ const dataQuestions: Question[] = [
     options: [
       { id: 'A', text: '테이블의 색상과 디자인' },
       { id: 'B', text: '행/열로 사용할 필드와 집계 방식' },
-      { id: 'C', text: '테이블을 만든 날짜' },
-      { id: 'D', text: '파일 저장 경로' }
+      { id: 'C', text: '원본 데이터의 정렬 순서' },
+      { id: 'D', text: '데이터가 저장된 시트 이름' }
     ],
     correct_answer: 'B',
     explanation: '피벗 테이블 생성에는 어떤 필드를 행/열로 사용하고, 어떤 집계 함수를 적용할지가 핵심입니다.'
@@ -280,11 +280,11 @@ const dataQuestions: Question[] = [
     options: [
       { id: 'A', text: '각 그룹의 샘플 크기' },
       { id: 'B', text: '측정한 지표와 결과값' },
-      { id: 'C', text: '테스트 담당자의 사진' },
+      { id: 'C', text: '테스트 실행 서버의 하드웨어 사양' },
       { id: 'D', text: '통계적 유의수준 기준' }
     ],
     correct_answer: 'C',
-    explanation: 'A/B 테스트 분석에는 샘플 크기, 측정 지표, 유의수준 등이 필요하지만 담당자 사진은 불필요합니다.'
+    explanation: 'A/B 테스트 분석에는 샘플 크기, 측정 지표, 유의수준 등이 필요하지만 서버 하드웨어 사양은 통계 분석과 무관합니다.'
   }
 ];
 
