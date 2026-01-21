@@ -272,29 +272,135 @@ interface AssessmentStore {
 
 ---
 
-## 추후 개발 예정 (Supabase 연동 시)
+## 추후 개발 로드맵 (Supabase 연동)
 
-### 1. 인증 시스템
-- [ ] 소셜 로그인 (Google, Kakao)
-- [ ] 이메일/비밀번호 로그인
-- [ ] 세션 관리
+### 구현 순서 (의존성 기반)
+```
+Phase 1: Supabase 연동 & 인증 시스템
+    ↓
+Phase 2: 팀/부서별 관리 대시보드
+    ↓
+Phase 3: 재평가 및 성장 추적
+    ↓
+Phase 4: 맞춤형 학습 콘텐츠
+    ↓
+Phase 5: 실습 과제 시스템
+```
 
-### 2. 데이터베이스
-- [ ] 사용자 정보 저장
-- [ ] 평가 결과 영구 저장
-- [ ] 문제 DB 관리
+---
 
-### 3. 관리자 기능
-- [ ] 문제 CRUD
-- [ ] 사용자 관리
-- [ ] 통계 대시보드
-- [ ] 부서별/팀별 분석
+### Phase 1: Supabase 연동 & 인증 시스템
 
-### 4. 추가 기능
+**목표:** 모든 후속 기능의 기반
+
+**작업 내용:**
+- [ ] Supabase 프로젝트 생성 및 환경 변수 설정
+- [ ] 데이터베이스 스키마 설계 (users, teams, departments, assessments)
+- [ ] 로그인/회원가입 페이지 (`/login`, `/signup`)
+- [ ] Auth Store 생성 (`lib/store/auth-store.ts`)
+- [ ] 기존 localStorage → Supabase DB 마이그레이션
+
+**생성 파일:**
+```
+lib/supabase.ts
+lib/store/auth-store.ts
+lib/types/user.ts
+app/login/page.tsx
+app/signup/page.tsx
+middleware.ts
+```
+
+---
+
+### Phase 2: 팀/부서별 관리 대시보드
+
+**목표:** 관리자가 팀원들의 AI 역량 현황 파악
+
+**작업 내용:**
+- [ ] 권한 체계 구현 (user, team_leader, manager, admin)
+- [ ] 팀 관리 기능 (생성/수정/삭제, 팀원 관리)
+- [ ] 팀 대시보드 (평균 점수, 카테고리별 분석, 성장 추세)
+- [ ] 부서 대시보드 (팀간 비교, 교육 필요 영역 식별)
+
+**생성 파일:**
+```
+lib/types/team.ts
+lib/store/team-store.ts
+app/admin/teams/page.tsx
+app/manager/dashboard/page.tsx
+components/dashboard/TeamAnalytics.tsx
+```
+
+---
+
+### Phase 3: 재평가 및 성장 추적
+
+**목표:** 정기적인 재평가를 통한 성장 모니터링
+
+**작업 내용:**
+- [ ] 성장 지표 계산 (향상도, 팀 평균 대비 위치)
+- [ ] 평가 비교 기능 (이전 vs 현재)
+- [ ] 재평가 관리 (일정 알림, 목표 설정)
+- [ ] 성장 시각화 (추세 그래프, 마일스톤 배지)
+
+**생성 파일:**
+```
+lib/types/growth.ts
+lib/store/growth-store.ts
+app/growth/page.tsx
+components/dashboard/GrowthTrendChart.tsx
+components/dashboard/ComparisonCard.tsx
+```
+
+---
+
+### Phase 4: 맞춤형 학습 콘텐츠
+
+**목표:** 등급/카테고리별 맞춤 학습 자료 제공
+
+**작업 내용:**
+- [ ] 학습 콘텐츠 데이터 구조 설계
+- [ ] 추천 알고리즘 (약점 기반, 난이도 필터링)
+- [ ] 학습 진도 관리 (완료 체크, 진도율 시각화)
+- [ ] 카테고리별 학습 자료 DB 구축
+
+**생성 파일:**
+```
+lib/types/content.ts
+lib/data/learning-contents.ts
+lib/store/content-store.ts
+app/learning/page.tsx
+components/content/ContentCard.tsx
+```
+
+---
+
+### Phase 5: 실습 과제 시스템
+
+**목표:** 수준별 AI 활용 미션 부여 및 관리
+
+**작업 내용:**
+- [ ] 과제 데이터 구조 설계
+- [ ] 과제 관리 기능 (생성, 할당, 피드백)
+- [ ] 과제 수행 UI (목록, 제출, 피드백 확인)
+- [ ] 기본 과제 DB 구축
+
+**생성 파일:**
+```
+lib/types/task.ts
+lib/data/practice-tasks.ts
+lib/store/task-store.ts
+app/tasks/page.tsx
+components/task/TaskCard.tsx
+```
+
+---
+
+### 추가 기능 (선택)
 - [ ] PDF 리포트 다운로드
 - [ ] 이메일 결과 발송
 - [ ] 리더보드
-- [ ] 학습 콘텐츠 연동
+- [ ] AI API 연동 (OpenAI)
 
 ---
 
