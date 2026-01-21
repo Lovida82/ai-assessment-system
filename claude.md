@@ -145,6 +145,66 @@ ai-assessment/
 
 ---
 
+## 문제 현황 (2026-01-21 기준)
+
+### 프롬프트 엔지니어링 (10문제)
+| ID | 난이도 | 주제 |
+|----|--------|------|
+| prompt-1 | easy | 효과적인 질문 방법 |
+| prompt-2 | easy | Few-shot (예시 제공) |
+| prompt-3 | medium | Role Prompting 장점 |
+| prompt-4 | medium | Chain-of-Thought |
+| prompt-5 | medium | 제약 조건 명시 |
+| prompt-6 | hard | AI 환각(Hallucination) |
+| prompt-7 | hard | 청킹 전략 |
+| prompt-8 | easy | Zero-shot vs Few-shot 차이 |
+| prompt-9 | hard | Temperature 설정 |
+| prompt-10 | medium | Negative Prompting |
+
+### 데이터 분석 & 시각화 (10문제)
+| ID | 난이도 | 주제 |
+|----|--------|------|
+| data-1 | easy | EDA 첫 단계 |
+| data-2 | easy | 범주형 데이터 차트 |
+| data-3 | medium | 이상치 탐지 |
+| data-4 | medium | 피벗 테이블 |
+| data-5 | hard | 상관관계 vs 인과관계 |
+| data-6 | easy | Excel 데이터 제공 방법 |
+| data-7 | medium | 대시보드 설계 |
+| data-8 | hard | 과적합 방지 |
+| data-9 | medium | 접근성 (색맹) |
+| data-10 | hard | A/B 테스트 |
+
+### 워크플로우 자동화 (10문제)
+| ID | 난이도 | 주제 |
+|----|--------|------|
+| workflow-1 | easy | 자동화 첫 단계 |
+| workflow-2 | easy | 이메일 자동화 주의점 |
+| workflow-3 | medium | RPA 적합 업무 |
+| workflow-4 | medium | API 연동 |
+| workflow-5 | hard | 예외 처리 |
+| workflow-6 | easy | AI 문서 작성 |
+| workflow-7 | medium | ROI 계산 |
+| workflow-8 | medium | AI 회의록 작성 활용 |
+| workflow-9 | medium | 노코드/로우코드 |
+| workflow-10 | medium | 자동화 대상 선정 우선순위 |
+
+### 윤리 및 보안 (10문제)
+| ID | 난이도 | 주제 |
+|----|--------|------|
+| ethics-1 | easy | 입력 금지 정보 |
+| ethics-2 | easy | AI 콘텐츠 검증 |
+| ethics-3 | medium | AI 편향성 |
+| ethics-4 | medium | 제약회사 규정 (GMP 등) |
+| ethics-5 | hard | AI 투명성 |
+| ethics-6 | easy | 회사 보안 정책 |
+| ethics-7 | medium | 딥페이크 위험 |
+| ethics-8 | hard | 설명 가능성 |
+| ethics-9 | medium | EU AI Act |
+| ethics-10 | hard | 공정성 개념 |
+
+---
+
 ## 디자인 시스템
 
 ### 브랜드 컬러 (아주홀딩스)
@@ -267,13 +327,26 @@ npm run lint
 
 ## 변경 이력
 
+### 2026-01-21 (문제 검토 및 수정)
+- 문제 전체 검토 완료
+- 중복 문제 수정:
+  - prompt-8: Role Prompting → Zero-shot vs Few-shot 차이
+- 부자연스러운 오답 선택지 수정:
+  - data-3: "회사 로고 이미지" → "데이터 파일의 확장자"
+  - data-4: "테이블 만든 날짜" → "원본 데이터 정렬 순서"
+  - data-10: "담당자 사진" → "서버 하드웨어 사양"
+- 난이도 조정 (비개발자용으로 수정):
+  - workflow-8: 마이크로서비스 오케스트레이션 → AI 회의록 작성 활용
+  - workflow-10: CI/CD AI 활용 → 자동화 대상 선정 우선순위
+- 메인 페이지 "내 결과 보기" 버튼 스타일 수정 (텍스트 가시성 개선)
+- GitHub 저장소 생성 및 Vercel 배포 완료
+
 ### 2026-01-20 (초기 개발)
 - 프로젝트 초기 설정 (Next.js 16 + TypeScript)
 - 전체 UI/UX 구현
 - 40개 문제 데이터 작성
 - Zustand 상태 관리 구현
 - 아주홀딩스 브랜드 디자인 적용
-- Vercel 배포 완료
 
 ---
 
@@ -283,3 +356,14 @@ npm run lint
 - 문제 데이터는 `/lib/data/questions.ts`에 하드코딩
 - 피드백은 로컬에서 생성 (`generateLocalFeedback` 함수)
 - 추후 실제 AI API 연동 가능 (OpenAI 등)
+
+---
+
+## Git 커밋 히스토리
+
+```
+7ba1ce1 fix: Simplify workflow-8 and workflow-10 for general users
+a556eda fix: Update duplicate and implausible question options
+1d39425 docs: Add claude.md project documentation
+fd9ab84 Initial commit: AI Assessment System for Aju Holdings
+```
